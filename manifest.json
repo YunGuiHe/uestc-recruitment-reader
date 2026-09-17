@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "成电招聘阅读助手",
+  "version": "1.1.0",
+  "description": "全局搜索电子科技大学招聘信息，在新标签页打开详情，并标记已读记录。",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://jiuye.uestc.edu.cn/career/recruitment/onsite*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "https://jiuye.uestc.edu.cn/*"
+  ]
+}
